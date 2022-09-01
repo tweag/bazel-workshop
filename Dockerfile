@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
             default-jdk-headless \
             git \
             vim \
+            tree \
             gcc \
             make \
             sudo \
