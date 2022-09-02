@@ -389,7 +389,7 @@ We also saw the `...` target earlier. For our `01_cpp` example, these coincide, 
 
 #### All files
 
-We can also query for all ruls **and** all files (source or generated) in the top-level package.
+We can also query for all rules **and** all files (source or generated) in the top-level package.
 
 ```bash
 bazel query //:*
