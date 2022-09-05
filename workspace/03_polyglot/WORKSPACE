@@ -24,6 +24,7 @@ http_archive(
       name = "arrayfire",
       build_file_content = _ALL_CONTENT,
       sha256 = "2d01b35adade2433078f57e2233844679aabfdb06a41e6992a6b27c65302d3fe",
+      strip_prefix = "arrayfire-full-3.8.2",
       urls = ["https://github.com/arrayfire/arrayfire/releases/download/v3.8.2/arrayfire-full-3.8.2.tar.bz2"],
 )
 

@@ -7,7 +7,7 @@ cc_library(
     deps = [
         "@com_google_protobuf//:protobuf",
         "@zlib.c//:zlib.c",
-        # "@arrayfire//:arrayfire",
+        "//:arrayfire",
     ],
     # We define the visibilty explicitly so it can be accessed from other packages in the workspace.
     # https://bazel.build/concepts/visibility

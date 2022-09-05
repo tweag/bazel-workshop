@@ -19,6 +19,25 @@ RUN apt-get update && apt-get install -y \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && echo ". /etc/bash_completion" >> /root/.bashrc
+
+# ==================================================================
+# MKL https://software.intel.com/en-us/mkl
+# ------------------------------------------------------------------
+RUN cd /tmp && wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB && \
+      apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB && \
+      sh -c 'echo deb https://apt.repos.intel.com/mkl all main > /etc/apt/sources.list.d/intel-mkl.list' && \
+      apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y intel-mkl-64bit-2020.4-912 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+
+# ==================================================================
+# KenML Build dependencies
+# ------------------------------------------------------------------
+RUN apt-get update && apt-get install -y \
+  libboost-system-dev libboost-thread-dev libboost-program-options-dev \
+  libboost-test-dev libeigen3-dev zlib1g-dev libbz2-dev liblzma-dev
+
 ENV NB_USER user
 ENV NB_UID  1000
 ENV HOME  /home/${NB_USER}
