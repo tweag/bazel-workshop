@@ -12,7 +12,7 @@ http_archive(
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 protobuf_deps()
 
-# Depend on arrayfire (a non-bazel projec, built using CMake - in 3rdparty/arrayfire.BUILD)
+# Depend on arrayfire (a non-bazel project, built using `cmake` from Foreign CC in BUILD)
 _ALL_CONTENT = """\
 filegroup(
     name = "all_srcs",
